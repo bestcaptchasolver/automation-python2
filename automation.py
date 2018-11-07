@@ -215,7 +215,8 @@ def requests_invisible():
         # solve image captcha with BCS
         id = bcs.submit_recaptcha({  # submit image to bcs
             'page_url': url,
-            'site_key': site_key
+            'site_key': site_key,
+            'type': '2'
         })  # submit image captcha
         print '[+] Got ID {}, waiting for completion...'.format(id)
         gresponse = None
@@ -234,6 +235,7 @@ def requests_invisible():
         print '[+] Response from site: ', resp
     finally:
         print '---------------------------------'
+
 
 # Automate main method
 def automate():
